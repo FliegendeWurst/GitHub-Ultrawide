@@ -1,0 +1,71 @@
+/* ==UserStyle==
+@name        GitHub Ultrawide
+@namespace   github.com/FliegendeWurst/GitHub-Ultrawide
+@version     1.1.0
+@license     CC-BY-SA-4.0
+@author      Yretenai, FliegendeWurst
+@advanced dropdown header-color "Header Color" {
+  Light "Light" <<<EOT
+  #24292e EOT;
+  Dark "Dark" <<<EOT
+  #181818 EOT;
+}
+==/UserStyle== */
+
+@-moz-document regexp("^https?://((education|gist|graphql|guides|help|lab|raw|resources|status|developer|support|vscode-auth)\\.)?github\\.com/((?!generated_pages/preview).)*$"), domain("githubusercontent.com") {
+    @media(min-width: 1312px) {
+        .pagehead.repohead > div {
+            width: 1280px;
+            margin: 0 auto;
+        }
+        .pagehead.repohead > nav > ul {
+            width: 1216px;
+            margin: 0 auto;
+        }
+        div {
+            max-width: 100% !important;
+        }
+        div.pr-toolbar, .TimelineItem-break, .TimelineItem-Badge {
+            max-width: unset !important;
+        }
+        .notifications-v2.notification-shelf > div {
+            width: 1280px;
+            margin: 0 auto;
+            padding-left: 32px;
+        }
+        header.Header {
+            width: 100%;
+            margin: 0 0;
+        }
+        div.Header {
+            width: 100%;
+            margin: 0 auto;
+        }
+        header.Header:before,div.Header:before {
+            content: "";
+            background: /*[[header-color]]*/;
+            border-bottom: 1px solid #343434 !important;
+            left: 0;
+            right: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        #repository-container-header > .UnderlineNav {
+            padding-left: 32px !important;
+        }
+        #repository-container-header > .UnderlineNav > .UnderlineNav-body[data-view-component="true"] {
+            margin-left: 0px !important;
+        }
+        #repository-container-header > div > div {
+            margin-left: 0px !important;
+        }
+        #repository-container-header > div {
+            padding-left: 32px !important;
+        }
+        div[data-selector="repos-split-pane-content"] {
+            margin-left: 0px;
+        }
+    }
+}
