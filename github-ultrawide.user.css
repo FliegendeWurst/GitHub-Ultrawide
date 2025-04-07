@@ -22,7 +22,7 @@
             width: 1216px;
             margin: 0 auto;
         }
-        div {
+        div[data-testid="issue-viewer-container"] > div > div {
             max-width: 100% !important;
         }
         div.pr-toolbar, .TimelineItem-break, .TimelineItem-Badge {
